@@ -1,77 +1,105 @@
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
 html, body {
-    margin: 0;
-    padding: 0;
-    background: #0f1b25; /* or whatever main bg you want */
+    margin: 0;                   /* Remove default browser margin */
+    padding: 0;                  /* Remove default browser padding */
+    background: #0f1b25;         /* Main background color (dark navy) */
+    font-family: Arial, sans-serif;
 }
 
-/* LAYOUT */
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
 .container {
-    display: flex;
+    display: flex;               /* Two-column layout */
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh;           /* Full viewport height */
+    box-sizing: border-box;
 }
 
-/* LEFT PANEL */
+/* ==========================================================================
+   LEFT PANEL
+   ========================================================================== */
 .left-panel {
-    width: 55%;
-    background-color: #0f1b25; /* dark navy */
+    width: 55%;                  /* Panel occupies 55% of screen */
+    background-color: #0f1b25;   /* Dark navy */
     color: white;
     padding: 40px 50px;
     box-sizing: border-box;
 }
 
-/* RIGHT PANEL */
+/* ==========================================================================
+   RIGHT PANEL
+   ========================================================================== */
 .right-panel {
-    width: 45%;
+    width: 45%;                  /* Panel occupies 45% of screen */
     background-color: white;
     padding: 40px 50px;
     box-sizing: border-box;
     color: black;
+    position: relative;          /* Needed for absolute positioning of logo */
 }
 
-/* Breadcrumb Container */
+/* ==========================================================================
+   RIGHT PANEL LOGO
+   ========================================================================== */
+.right-panel .right-logo {
+    position: absolute;          /* Float logo to top-right */
+    top: 20px;                   /* Distance from top */
+    right: 20px;                 /* Distance from right edge */
+    height: 100px;               /* Logo height */
+    width: auto;                 /* Maintain aspect ratio */
+    aspect-ratio: 3 / 2;         /* Ensure 3:2 proportion */
+    object-fit: contain;         /* Prevent distortion */
+}
+
+/* ==========================================================================
+   BREADCRUMB NAVIGATION
+   ========================================================================== */
 .left-panel .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex;               /* Horizontal layout */
+    align-items: center;         /* Vertical center */
+    gap: 8px;                    /* Space between items */
     font-size: 14px;
-    margin-bottom: 25px;
+    margin-bottom: 25px;         /* Space below breadcrumb */
 }
 
-/* Links */
+/* Breadcrumb links */
 .left-panel .breadcrumb a {
-    color: #ffffff;
-    text-decoration: none;
+    color: #ffffff;              /* White text */
+    text-decoration: none;       /* Remove default underline */
     position: relative;
     padding: 2px 6px;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;   /* Smooth hover effect */
 }
 
-/* Hover effect: underline */
+/* Hover effect for links */
 .left-panel .breadcrumb a:hover {
-    text-decoration: underline;
-    background: rgba(255, 255, 255, 0.1); /* subtle background */
+    text-decoration: underline;                  /* Underline on hover */
+    background: rgba(255, 255, 255, 0.1);       /* Slight highlight */
 }
 
-/* Separator */
+/* Separator style */
 .left-panel .breadcrumb .separator {
-    color: #cccccc;
+    color: #cccccc;             /* Light grey separator */
     font-weight: 600;
 }
 
-/* Current page */
+/* Current page styling */
 .left-panel .breadcrumb .current {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);  /* Pill-style highlight */
     padding: 3px 8px;
     border-radius: 12px;
     font-weight: 600;
     color: #ffffff;
-    pointer-events: none;
+    pointer-events: none;        /* Non-clickable */
 }
 
-
-/* TYPOGRAPHY */
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
 h1 {
     font-size: 36px;
     margin-bottom: 15px;
@@ -83,14 +111,16 @@ h1 {
     color: #e5e5e5;
 }
 
-/* STATS */
+/* ==========================================================================
+   STATS SECTION
+   ========================================================================== */
 .stats {
     display: flex;
-    justify-content: center;   /* centers all stat items horizontally */
-    align-items: center;        /* vertical align */
-    gap: 60px;                  /* even spacing between each group */
-    text-align: center;         /* centers text inside each stat-box */
-    margin-bottom: 50px;
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+    gap: 60px;                  /* Space between stat items */
+    text-align: center;         /* Center text inside each stat-box */
+    margin-bottom: 50px;        /* Space below stats */
 }
 
 .stat-box {
@@ -100,9 +130,8 @@ h1 {
 .divider {
     height: 50px;
     width: 1px;
-    background-color: #33404d;
+    background-color: #33404d;  /* Divider line */
 }
-
 
 .stat-box .label {
     font-size: 12px;
@@ -121,7 +150,9 @@ h1 {
     color: #c9c9c9;
 }
 
-/* CAR IMAGE */
+/* ==========================================================================
+   CAR IMAGE
+   ========================================================================== */
 .car-image img {
     width: 100%;
     border-radius: 10px;
@@ -129,9 +160,11 @@ h1 {
     padding: 10px;
 }
 
-/* RIGHT PANEL CONTENT */
+/* ==========================================================================
+   RIGHT PANEL CONTENT (Info Blocks)
+   ========================================================================== */
 .info-block {
-    margin-bottom: 40px;
+    margin-bottom: 40px;       /* Space between sections */
 }
 
 .info-block h3 {
@@ -143,4 +176,46 @@ h1 {
 .info-block p {
     font-size: 15px;
     color: #555;
+}
+
+/* ==========================================================================
+   PRODUCT TABLE
+   ========================================================================== */
+.product-table {
+    width: 90%;               /* slightly narrower so it centers nicely */
+    margin: 0 auto;           /* centers table */
+    border-collapse: collapse;
+    margin-top: 200px;
+    font-size: 16px;
+    background: #f9fbfc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.product-table th {
+    background: #0f1a24;     /* dark blue, matches left panel */
+    color: #ffffff;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-table td {
+    padding: 14px 16px;
+    color: #333;
+    border-bottom: 1px solid #e2e6ea;
+}
+
+.product-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Row hover effect */
+.product-table tr:hover td {
+    background: #eef2f5;
+    transition: 0.2s;
 }
