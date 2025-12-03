@@ -195,8 +195,8 @@ body::before {
 }
 
 .btn-yellow {
-    background: #d71f26;
-    border-color: #d71f26;
+    background: ##E5BE01;
+    border-color: ##E5BE01;
 }
 
 .btn-blue {
@@ -233,3 +233,4 @@ body::before {
         width: 100%;
     }
 }
+
