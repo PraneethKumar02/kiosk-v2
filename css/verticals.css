@@ -184,6 +184,7 @@ body::before {
     transition: 0.3s ease;
     font-size: 14px;
     transform: scale(1);
+   text-decoration: none;
 }
 
 /* Modern hover effect: scale + shadow */
@@ -235,5 +236,6 @@ body::before {
         width: 100%;
     }
 }
+
 
 
