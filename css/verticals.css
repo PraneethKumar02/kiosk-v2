@@ -213,8 +213,8 @@ body::before {
 }
 
 .btn-energy {
-    background: ##1CA350;
-    border-color: ##1CA350;
+    background: #1CA350;
+    border-color: #1CA350;
     color: #fff;
 }
 
@@ -242,6 +242,7 @@ body::before {
         width: 100%;
     }
 }
+
 
 
 
